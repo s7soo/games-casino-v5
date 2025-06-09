@@ -264,9 +264,9 @@ async function startGame() {
         const minusBtn = document.createElement("button");
         minusBtn.textContent = "-";
         minusBtn.onclick = () => {
-            if (parseInt(scoreSpan.textContent) > 0) {
+         
                  scoreSpan.textContent = parseInt(scoreSpan.textContent) - 1;
-            }
+            
         };
         controls.appendChild(plusBtn);
         controls.appendChild(minusBtn);
