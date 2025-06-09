@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لعبة الأسئلة</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+
+<body>
+
+  <div id="help-icon-container">
+    <i class="fa-solid fa-question" id="help-icon" onclick="openHelpModal()"></i>
+
+  </div>
+  <script src="functions.js"></script>
+  <div id="player-form">
+    <label>أدخل أسماء اللاعبين مفصولة بفاصلة</label>
+    <input id="player-input" type="text" placeholder="مثال: علي,فاطمة,كريم">
+    <button onclick="startGame()">ابدأ اللعبة</button>
+  </div>
+
+  <div id="winner-screen">
+    <div id="winner-name"></div>
+    <button onclick="restartGame()">إعادة بدء اللعبة</button>
+  </div>
+
+  <div class="top-section" id="game-section">
+    <div class="question-section">
+      <div id="category-selection-view">
+        <div class="category-selection">
+          <h3>اختر فئة الأسئلة:</h3>
+          <div id="categories-container"></div>
+          <button onclick="applyCategorySelection()">تأكيد الاختيار</button>
+        </div>
+      </div>
+
+      <div id="game-view" style="display: none;">
+        <button id="change-category-btn" onclick="showCategorySelection()">تغيير الفئة</button>
+        <div id="question" class="question"></div>
+        <div class="answers" id="answers"></div>
+        <div class="nav-buttons">
+          <button id="show-answer-btn" onclick="showCorrectAnswer()">إظهار الإجابة</button>
+          <button onclick="randomQuestion()">سؤال عشوائي</button>
+          <button onclick="prevQuestion()">السابق</button>
+        </div>
+      </div>
+    </div>
+    <div class="score-section">
+      <h2>المتسابقون</h2>
+      <div id="players"></div>
+    </div>
+  </div>
+
+  <div id="custom-alert-modal" class="modal-overlay">
+    <div class="modal-content">
+      <p id="modal-message"></p>
+      <button id="modal-close-btn">موافق</button>
+    </div>
+  </div>
+
+  <div id="help-modal" class="modal-overlay">
+    <div class="modal-content help-content">
+      <span class="close-button" onclick="closeHelpModal()">&times;</span>
+      <h2>كيفية لعب اللعبة؟</h2>
+      <div class="help-text">
+        <p>:مرحباً بك في لعبة الأسئلة! إليك دليل بسيط لكيفية اللعب</p>
+
+        <h3>:دور الحكم (الشخص الذي يستخدم التطبيق)</h3>
+        <ul>
+          <li>أنت المسؤول عن إدارة اللعبة وطرح الأسئلة</li>
+          <li>لديك شاشة التحكم في الأسئلة ونقاط المتسابقين</li>
+          <li>يمكنك إضافة أو إنقاص النقاط للمتسابقين بسهولة</li>
+          <li>في أي وقت، يمكنك الضغط على زر "إظهار الإجابة" لمعرفة الإجابة الصحيحة</li>
+          <li>"يمكنك الانتقال بين الأسئلة باستخدام أزرار "سؤال عشوائي" و"السابق</li>
+          <li>في حالة الفوضى أو عدم الالتزام بقواعد اللعب من قبل المتسابقين، يمكنك إنقاص نقاط من اللاعبين المخالفين</li>
+        </ul>
+
+        <h3>:دور المتسابقين</h3>
+        <ul>
+          <li>يجب ان يجلس المتسابقين علي طاولة واحده ويكون هناك جرس او اي شئ يشبه الجرس في المنتصف</li>
+          <li>عندما يطرح الحكم السؤال، أول متسابق يضغط على الجرس هو من يحق له الإجابة</li>
+          <li><strong>إذا كانت الإجابة صحيحة:</strong> يكسب المتسابق نقطة (يقوم الحكم بإضافة النقطة له)</li>
+          <li><strong>إذا كانت الإجابة خاطئة:</strong> ينقص المتسابق نقطة (يقوم الحكم بإنقاص النقطة منه). وفي هذه
+            الحالة، تتاح الفرصة للمتسابقين الآخرين للإجابة بعد الضغط على الجرس</li>
+        </ul>
+
+        <h3>:قواعد إضافية</h3>
+        <ul>
+          <li>في حالة صعوبة السؤال، يمكن للحكم أن يقرر إظهار الاختيارات للمتسابقين لمساعدتهم</li>
+          <li>الهدف هو الوصول إلى 10 نقاط للفوز</li>
+        </ul>
+        <p>نتمنى لكم وقتاً ممتعاً ومليئاً بالتحدي</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
