@@ -136,7 +136,7 @@ function checkWinner(name, score) {
 function endGameAndDeclareWinner() {
     // This alert might be better as a specific winner announcement,
     // but keeping it as a general end-of-category message for now.
-    showAlertModal("انتهت جميع الأسئلة في هذه الفئة! سيتم الآن تحديد الفائز."); 
+    // showAlertModal("انتهت جميع الأسئلة في هذه الفئة! سيتم الآن تحديد الفائز."); 
 
     const players = [];
     document.querySelectorAll('.player').forEach(playerDiv => {
