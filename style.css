@@ -479,6 +479,7 @@ body {
 
     /* Responsive adjustments for modal */
     @media (max-width: 600px) {
+      
         .modal-content {
             width: 90%;
             padding: 20px;
@@ -509,4 +510,61 @@ body {
             top: 5px;
             left: 10px;
         }
+    }
+     @media (max-width: 768px) {
+      .top-section {
+        flex-direction: column;
+        margin: 10px;
+        box-shadow: none;
+        border-radius: 0;
+        flex-wrap: wrap; /* Added for better responsiveness*/
+      }
+      .question-section, .score-section {
+        width: 100%;
+        border-right: none;
+        border-left: none;
+        padding: 20px;
+      }
+      .question-section {
+        border-bottom: 2px solid #eee;
+      }
+      .score-section {
+        padding-top: 30px; /* Added padding to separate sections when stacked*/
+      }
+      #player-input {
+        width: 90%;
+        margin-bottom: 15px;
+        margin-right: 0;
+      }
+      #player-form button {
+        width: 90%;
+      }
+      .nav-buttons button {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+      }
+      .question {
+        font-size: 1.4em;
+      }
+      .answers label {
+        padding: 12px 15px;
+        font-size: 1em;
+      }
+      #player-form label {
+        font-size: 1.2em;
+      }
+      #winner-screen {
+        padding: 40px 15px;
+        font-size: 1.5em;
+        margin: 20px auto;
+      }
+      #winner-screen button {
+        font-size: 1em;
+        padding: 12px 20px;
+      }
+      #categories-container label {
+        width: 100%;
+        justify-content: center;
+      }
     }
